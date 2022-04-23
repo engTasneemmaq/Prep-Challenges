@@ -26,16 +26,15 @@ var second_Person = {
     age: 33,
     hobby: "Campaign",
   };
-
-const objcat = (obj) => {
-        console.log("my name is "+second_Person.firstName.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))+" "
-        + second_Person.lastName.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))+" "
-        +"I am "+second_Person.age+" YO, and I love "+second_Person.hobby+"."
-        
-        );
-
-    }
-    objcat(second_Person);
+let message;
+const objLat = (obj) => {
+  message=("my name is "+obj.firstName.trim().replace(/^\w/, (c) => c.toUpperCase())
+  +" "+obj.lastName.trim().replace(/^\w/, (c) => c.toUpperCase())
+  +" "+"I am "+obj.age+" YO, and I love "+obj.hobby+"."+""
+  );
+  return message;
+};
+objLat(second_Person);
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -97,8 +96,31 @@ const objcat = (obj) => {
 //  1- Full name is first name + last name
 //  2- If one of the names is null don`t add it to the full name
 
+
+let first_Cv_Sample = [
+    {
+      firstName: "Jason",
+      lastName: "James",
+      yearsOfExperience: 20,
+      tech: "JS",
+    },
 const cvFormatter = (arr) => {
-    // write your code here
+   let fullName ;
+   let newcvs = new Array ();
+   function checkAnswer(){
+       for (let i = 0; i < arr.length; i++) {
+           if (arr[firstName] === " " || arr[lastName] === " ") {
+               continue;    
+           }
+           else if (yearsOfExperience >1){
+               newcvs[i].push(firstName+lastName as fullName);
+               newcvs[i].push(tech);
+           }
+           
+       }
+       return checkAnswer;
+   }
+   checkAnswer(first_Cv_Sample);
 };
 // -------------------------------------------------------------------------------------------------------
 
