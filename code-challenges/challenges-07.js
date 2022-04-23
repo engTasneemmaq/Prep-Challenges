@@ -20,22 +20,13 @@
 //  1- The text template is "my name is ** ** I am ** YO, and I love **."
 //  2- The first letters of the firstName and lastName should be capital letter
 
-var second_Person = {
-    firstName: "Jane",
-    lastName: "Doe",
-    age: 33,
-    hobby: "Campaign",
-  };
-
-const objcat = (obj) => {
-        console.log("my name is "+second_Person.firstName.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))+" "
-        + second_Person.lastName.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))+" "
-        +"I am "+second_Person.age+" YO, and I love "+second_Person.hobby+"."
-        
-        );
-
-    }
-    objcat(second_Person);
+const objLat = (obj) => {
+    // write your code here
+    let fNameCap=obj.firstName.charAt(0).toUpperCase() + obj.firstName.slice(1);
+    let lNameCap=obj.lastName.charAt(0).toUpperCase() + obj.lastName.slice(1);
+    let result=`my name is ${fNameCap} ${lNameCap} I am ${obj.age} YO, and I love ${obj.hobby}.`;
+    return result;
+};
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -97,9 +88,45 @@ const objcat = (obj) => {
 //  1- Full name is first name + last name
 //  2- If one of the names is null don`t add it to the full name
 
-const cvFormatter = (arr) => {
-    // write your code here
-};
+
+    const cvFormatter = (arr) => {
+        // write your code here
+        let arrayInfo=[];
+        let name;
+        let obj;
+        for(let i=0;i<=arr.length-1;i++){
+            if(arr[i].yearsOfExperience>1){
+                if(arr[i].firstName!=null&&arr[i].lastName!=null){
+                    name=arr[i].firstName+" "+arr[i].lastName;
+                }
+                
+                if(arr[i].firstName==null){
+                    if(arr[i].lastName==null){
+                        name==null;
+                    }else{
+                        name=arr[i].lastName;
+                    }
+                }else {
+                    if(arr[i].lastName==null){
+                        if(arr[i].firstName==null){
+                            name=null;
+                        }else{
+                            name=arr[i].firstName;
+                        }
+                    }
+                }
+                obj={
+                    fullName: name,
+                    tech: arr[i].tech,
+                },
+                arrayInfo.push(obj);
+    
+            }
+            }
+        
+        return arrayInfo;
+    };
+
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
