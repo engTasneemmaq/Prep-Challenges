@@ -20,21 +20,15 @@
 //  1- The text template is "my name is ** ** I am ** YO, and I love **."
 //  2- The first letters of the firstName and lastName should be capital letter
 
-var second_Person = {
-    firstName: "Jane",
-    lastName: "Doe",
-    age: 33,
-    hobby: "Campaign",
-  };
 let message;
 const objLat = (obj) => {
-  message=("my name is "+obj.firstName.trim().replace(/^\w/, (c) => c.toUpperCase())
-  +" "+obj.lastName.trim().replace(/^\w/, (c) => c.toUpperCase())
-  +" "+"I am "+obj.age+" YO, and I love "+obj.hobby+"."+""
-  );
-  return message;
+    message = ("my name is " + obj.firstName.trim().replace(/^\w/, (c) => c.toUpperCase()) +
+        " " + obj.lastName.trim().replace(/^\w/, (c) => c.toUpperCase()) +
+        " " + "I am " + obj.age + " YO, and I love " + obj.hobby + "." + ""
+    );
+    return message;
 };
-objLat(second_Person);
+
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -96,32 +90,44 @@ objLat(second_Person);
 //  1- Full name is first name + last name
 //  2- If one of the names is null don`t add it to the full name
 
-
-let first_Cv_Sample = [
-    {
-      firstName: "Jason",
-      lastName: "James",
-      yearsOfExperience: 20,
-      tech: "JS",
-    },
 const cvFormatter = (arr) => {
-   let fullName ;
-   let newcvs = new Array ();
-   function checkAnswer(){
-       for (let i = 0; i < arr.length; i++) {
-           if (arr[firstName] === " " || arr[lastName] === " ") {
-               continue;    
-           }
-           else if (yearsOfExperience >1){
-               newcvs[i].push(firstName+lastName as fullName);
-               newcvs[i].push(tech);
-           }
-           
-       }
-       return checkAnswer;
-   }
-   checkAnswer(first_Cv_Sample);
+    // write your code here
+    let arrayInfo=[];
+    let name;
+    let obj;
+    for(let i=0;i<=arr.length-1;i++){
+        if(arr[i].yearsOfExperience>1){
+            if(arr[i].firstName!=null&&arr[i].lastName!=null){
+                name=arr[i].firstName+" "+arr[i].lastName;
+            }
+            
+            if(arr[i].firstName==null){
+                if(arr[i].lastName==null){
+                    name==null;
+                }else{
+                    name=arr[i].lastName;
+                }
+            }else {
+                if(arr[i].lastName==null){
+                    if(arr[i].firstName==null){
+                        name=null;
+                    }else{
+                        name=arr[i].firstName;
+                    }
+                }
+            }
+            obj={
+                fullName: name,
+                tech: arr[i].tech,
+            },
+            arrayInfo.push(obj);
+
+        }
+        }
+    
+    return arrayInfo;
 };
+
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
