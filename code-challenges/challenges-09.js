@@ -18,6 +18,8 @@
 //  [30, 64, 99, 51]
 //  
 
+
+
 const arrInc = (array) => {
     let result = [];
     array.forEach(element =>
@@ -39,6 +41,8 @@ const arrInc = (array) => {
 //  Output:
 //  [5, 6, 7, 7]
 // 
+
+
 let result=[];
 const roundDecimals = (array) => {
 
