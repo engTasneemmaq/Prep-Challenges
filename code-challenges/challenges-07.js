@@ -20,14 +20,13 @@
 //  1- The text template is "my name is ** ** I am ** YO, and I love **."
 //  2- The first letters of the firstName and lastName should be capital letter
 
-let message;
 const objLat = (obj) => {
-    message = ("my name is " + obj.firstName.trim().replace(/^\w/, (c) => c.toUpperCase()) +
-        " " + obj.lastName.trim().replace(/^\w/, (c) => c.toUpperCase()) +
-        " " + "I am " + obj.age + " YO, and I love " + obj.hobby + "." + ""
-    );
-    return message;
-};
+    // write your code here
+    let fNameCap=obj.firstName.charAt(0).toUpperCase() + obj.firstName.slice(1);
+    let lNameCap=obj.lastName.charAt(0).toUpperCase() + obj.lastName.slice(1);
+    let result=`my name is ${fNameCap} ${lNameCap} I am ${obj.age} YO, and I love ${obj.hobby}.`;
+    return result;
+}
 
 // -------------------------------------------------------------------------------------------------------
 
@@ -91,7 +90,7 @@ const objLat = (obj) => {
 //  2- If one of the names is null don`t add it to the full name
 
 const cvFormatter = (arr) => {
-    // write your code here
+        
     let arrayInfo=[];
     let name;
     let obj;
